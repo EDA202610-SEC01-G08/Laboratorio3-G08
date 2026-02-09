@@ -74,7 +74,7 @@ def print_author_data(author):
         print('Autor encontrado: ' + author['name'])
         print('Promedio: ' + str(author['average_rating']))
         print('Total de libros: ' + str(lt.size(author['books'])))
-        for book_pos in range(0, lt.size(author['books'])):
+        for book_pos in range(1, lt.size(author['books']) + 1):
             book = lt.get_element(author['books'], book_pos)
             print('Titulo: ' + book['title'] + '  ISBN: ' + book['isbn'])
     else:
