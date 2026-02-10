@@ -39,3 +39,36 @@ def size(my_list):
 def first_element(my_list):
     return my_list['elements'][0]
 
+def is_empty(my_list):
+    return my_list['size'] == 0
+
+def get_last_element(my_list):
+    return my_list['elements'][-1]
+
+def get_element(my_list, index):
+    return my_list['elements'][index - 1]
+
+def remove_first(my_list):
+    if my_list['size'] > 0:
+        removed_element = my_list['elements'].pop(0)
+        my_list['size'] -= 1
+        return removed_element
+    else:
+        raise IndexError("List is empty")
+
+def remove_last(my_list):
+    if my_list['size'] > 0:
+        removed_element = my_list['elements'].pop()
+        my_list['size'] -= 1
+        return removed_element
+    else:
+        raise IndexError("List is empty")
+
+def insert_element(my_list, element, index):
+    if index < 1 or index > my_list['size'] + 1:
+        raise IndexError("Index out of bounds")
+    my_list['elements'].insert(index - 1, element)
+    my_list['size'] += 1
+    return my_list
+
+
