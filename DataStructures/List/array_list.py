@@ -71,4 +71,30 @@ def insert_element(my_list, element, index):
     my_list['size'] += 1
     return my_list
 
+def delete_element(my_list, index):
+    if index < 1 or index > my_list['size']:
+        raise IndexError("Index out of bounds")
+    removed_element = my_list['elements'].pop(index - 1)
+    my_list['size'] -= 1
+    return my_list
 
+def change_info(my_list, index, new_element):
+    if index < 1 or index > my_list['size']:
+        raise IndexError("Index out of bounds")
+    my_list['elements'][index - 1] = new_element
+    return my_list
+
+def exchange(my_list, index1, index2):
+    if index1 < 0 or index1 >= my_list['size'] or index2 < 0 or index2 >= my_list['size']:
+        raise IndexError("Index out of bounds")
+    my_list['elements'][index1], my_list['elements'][index2] = my_list['elements'][index2], my_list['elements'][index1]
+    return my_list
+
+def sub_list(my_list, start_index, end_index):
+    if start_index < 0 or end_index > my_list['size'] or start_index > end_index:
+        raise IndexError("Index out of bounds")
+    new_sublist = {
+        'elements': my_list['elements'][start_index:end_index],
+        'size': end_index - start_index
+    }
+    return new_sublist

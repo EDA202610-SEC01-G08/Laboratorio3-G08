@@ -59,7 +59,7 @@ def first_element(my_list):
 def is_empty(my_list):
     return my_list['size'] == 0
 
-def get_last_element(my_list):
+def last_element(my_list):
     return my_list['last']['info']
 
 def get_element(my_list, pos):
@@ -135,7 +135,7 @@ def delete_element(my_list, pos):
         if current_node['next'] is None:
             my_list['last'] = current_node
     my_list['size'] -= 1
-    return removed_element
+    return my_list
 
 def change_info(my_list, pos, new_element):
     if pos < 0 or pos >= my_list['size']:
